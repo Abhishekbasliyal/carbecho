@@ -1,11 +1,9 @@
-// import {HeroSection} from "../../components/HeroSection.jsx";
-
-
+import HeroSection from "../../components/HeroSection.jsx";
 
 function Home(){
     return(
         <>
-            <h1>Home</h1>
+            <HeroSection/>
         </>
     )
 }
