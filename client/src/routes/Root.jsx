@@ -4,9 +4,11 @@ import Header from "../pages/Header/Header.jsx";
 export default function Root(){
     return(
         <>
-            <Header/>
-            <Outlet/>
-            {/* <Footer/> */}
+            <div>
+                <Header/>
+                <Outlet/>
+                {/* <Footer/> */}
+            </div>
         </>
     )
 }
