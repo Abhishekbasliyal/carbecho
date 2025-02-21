@@ -11,22 +11,22 @@ export default function Header(){
 
                             <NavLink
                                 to={"/"}
-                                className={({isActive}) => `${isActive ? "text-red-500" : ""}`}
+                                className={({isActive}) => `${isActive ? "text-[#4361EE]" : ""}`}
                             >Home</NavLink>
 
                             <NavLink
                                 to={"/carlisting"}
-                                className={({isActive}) => `${isActive ? "text-red-500" : ""}`}
+                                className={({isActive}) => `${isActive ? "text-[#4361EE]" : ""}`}
                             >Car Listings</NavLink>
 
                             <NavLink
                                 to={"/services"}
-                                className={({isActive}) => `${isActive ? "text-red-500" : ""}`}
+                                className={({isActive}) => `${isActive ? "text-[#4361EE]" : ""}`}
                             >Services</NavLink>
 
                             <NavLink
                                 to={"/profile"}
-                                className={({isActive}) => `${isActive ? "text-red-500" : ""} flex items-center gap-1`}
+                                className={({isActive}) => `${isActive ? "text-[#4361EE]" : ""} flex items-center gap-1`}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                      stroke="currentColor" className="size-5">

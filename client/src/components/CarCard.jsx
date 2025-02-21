@@ -9,7 +9,6 @@ const CarCard = ({year,make,model,type,kmDriven,price}) => {
 
     return (
         <>
-            <Link to={"/viewcar"}>
             <div className="group relative w-full overflow-hidden rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)]">
                 <div className="relative aspect-[6/3] w-full overflow-hidden object-fill">
                     <img
@@ -19,7 +18,9 @@ const CarCard = ({year,make,model,type,kmDriven,price}) => {
                     />
                 </div>
                 <div className="p-4">
-                    <h3 className="text-xl font-semibold text-gray-900">{year} {make} {model}</h3>
+                    <Link to={"/viewcar"}>
+                        <h3 className="text-xl font-semibold text-gray-900">{year} {make} {model}</h3>
+                    </Link>
                     <p className="mt-1 text-sm text-gray-500">{type} • {kmDriven} km</p>
                     <div className="mt-2 flex items-center justify-between">
                         <span className="text-xl font-bold text-[#4361EE]">₹{price}</span>
@@ -32,7 +33,6 @@ const CarCard = ({year,make,model,type,kmDriven,price}) => {
                     </div>
                 </div>
             </div>
-            </Link>
         </>
     )
 }

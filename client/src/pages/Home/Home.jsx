@@ -1,6 +1,6 @@
 import HeroSection from "../../components/HeroSection.jsx";
 import FeaturedCarsSection from "../../components/FeaturedCarsSection.jsx";
-import TestimonialsSection from "../../components/TestimonialsSection.jsx";
+import ReviewSection from "../../components/ReviewSection.jsx";
 
 function Home(){
     return(
@@ -8,7 +8,7 @@ function Home(){
             <div>
                 <HeroSection/>
                 <FeaturedCarsSection/>
-                <TestimonialsSection/>
+                <ReviewSection/>
             </div>
         </>
     )

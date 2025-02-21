@@ -4,7 +4,7 @@ import FillButton from "./FillButton.jsx";
 function HeroSection(){
     return(
         <>
-            <div className="relative overflow-hidden bg-[#e6f0fe] px-24">
+            <div className="relative bg-[#e6f0fe] px-24">
                 <div
                     className="container grid min-h-[400px] grid-cols-1 items-center gap-8 py-2 md:min-h-[500px] md:grid-cols-2 md:py-0">
                     <div className="z-10 space-y-6 md:space-y-8">
@@ -31,7 +31,8 @@ function HeroSection(){
                             <img
                                 src={carImage}
                                 alt={"car-image"}
-                                className="object-cover"
+                                className="absolute w-full h-[350px] sm:h-[450px] md:h-[550px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                                style={{borderRadius: "0 0 10px 10px"}}
                             />
                         </div>
                     </div>

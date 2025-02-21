@@ -15,7 +15,7 @@ const ReviewCard = ({name, review, imgURI, rating = 5}) => {
                     </div>
                     <div>
                         <h3 className="font-medium text-gray-900">{name}</h3>
-                        <div className="flex gap-1">
+                        <div className="flex gap-1 mt-1">
                             {[...Array(rating)].map((_, i) => (
                                 <Star
                                     key={i}
@@ -26,7 +26,7 @@ const ReviewCard = ({name, review, imgURI, rating = 5}) => {
                         </div>
                     </div>
                 </div>
-                <p className="text-gray-600 italic">{review}</p>
+                <p className="text-gray-600 italic">&quot;{review}&quot;</p>
             </div>
         </>
     )
