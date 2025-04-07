@@ -1,12 +1,22 @@
 const express = require('express');
-const app= express();
 const router = express.Router();
-const {allCars, addCar, getCar, searchCars}= require('../controllers/carscontroller');
+const {
+    allCars,
+    addCar,
+    getCar,
+    searchCars,
+    updateCar,
+    deleteCar,
+    myCars
+} = require('../controllers/carscontroller');
+const { isAuthenticated } = require('../middleware/authMiddleware');
 
-
-
-router.route('/').get(allCars).post(addCar);
-router.route('/:id').get(getCar);
-router.route('/search').get(searchCars);
+router.get('/', allCars); 
+router.get('/search', searchCars); 
+router.post('/', isAuthenticated, addCar); 
+router.get('/my', isAuthenticated, myCars); 
+router.get('/:id', isAuthenticated, getCar); 
+router.put('/:id', isAuthenticated, updateCar); 
+router.delete('/:id', isAuthenticated, deleteCar); 
 
 module.exports = router;

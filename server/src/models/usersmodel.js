@@ -1,37 +1,41 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-
-const UserSchema=new mongoose.Schema({
-    Name:{
+const userSchema = new mongoose.Schema({
+    userId: {
+        type: Number,
+        unique: true,
+    },
+    firstName: {
         type: String,
-        required:[true,'Name is required'],
-        trim:true,
-        maxlength:[25,'name can maximum have 25 characters']
+        required: false, // Made optional for Google
     },
-    Age:{
-        type:Number,
-        required:true,
+    lastName: {
+        type: String,
+        required: false,
     },
-    Address:{
-        Locality:{
-            required:true,
-            type:String,
-        },
-        City:{
-            type:String,
-            required:true,
-        },
-        State:{
-            type:String,
-            required:true
-        },
-        PostalCode:{
-            type:Number,
-            required:true
-        }
+    contactNumber: {
+        type: Number,
+        required: false,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+    },
+    password: {
+        type: String,
+        required: false, // Google login won’t need this
+    },
+    googleId: {
+        type: String,
+        unique: true,
+        sparse: true, // allow null values
+    },
+}, { timestamps: true });
 
-    }
+userSchema.plugin(AutoIncrement, { inc_field: 'userId', start_seq: 5000 });
 
-});
-
-module.exports= mongoose.model('User',UserSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User;

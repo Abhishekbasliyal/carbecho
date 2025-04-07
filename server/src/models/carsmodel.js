@@ -55,6 +55,14 @@ const CarSchema = new mongoose.Schema({
     AskPrice: {
         type: Number,
         required: [true, 'Must enter an asking price']
+    },
+    user_id: {
+        type:Number,
+        required:[true, 'Must enter a user_id']
+    },
+    reg_num:{
+        type:String,
+        required:[true, 'Must enter a reg_num']
     }
 },
 {collection : 'Cars'});
